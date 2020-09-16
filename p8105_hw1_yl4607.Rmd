@@ -1,0 +1,7 @@
+---
+title: "Homework 1"
+author: Yue Liu
+output: html_document
+---
+
+This is my solution to HW1 
