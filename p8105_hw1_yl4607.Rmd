@@ -34,7 +34,7 @@ mean(pull(prob1_df, char_vec))
 mean(pull(prob1_df, factor_vec))
 ```
 
-I can take the mean of numbers and logical but not character or facto.
+I can take the mean of numbers and logical but not character or factor.
 
 ```{r}
 as.numeric(pull(prob1_df, samp))
@@ -43,5 +43,32 @@ as.numeric(pull(prob1_df, char_vec))
 as.numeric(pull(prob1_df, factor_vec))
 ```
 
+```{r}
+as.numeric(pull(prob1_df, samp_gt_0)) * pull(prob1_df, samp)
+factor(pull(prob1_df, samp_gt_0)) * pull(prob1_df, samp)
+as.numeric(factor(pull(prob1_df, samp_gt_0))) * pull(prob1_df, samp)
+```
+
 
 ## Problem 2
+
+Load the penguins dataset.
+
+```{r}
+data("penguins", package = "palmerpenguins")
+```
+
+There are 8 variables contained in this dataset: species, island, bill length(mm), bill depth(mm), flipper mass(mm), body mass(g), sex, and year.
+
+The penguins dataset contains `r nrow(penguins)` rows and `r ncol(penguins)` columns.
+
+The mean flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm.
+
+Generates a scatterplot of flipper length vs bill length.
+
+```{r scatterplot}
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point() + labs(title = "Scatterplot of Flipper Length vs Bill Length",
+       x = "Bill Length (mm)", y = "Flipper Length (mm)")
+ggsave("scatterplot.pdf")
+```
+
