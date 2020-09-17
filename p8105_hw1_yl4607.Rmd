@@ -58,7 +58,16 @@ Load the penguins dataset.
 data("penguins", package = "palmerpenguins")
 ```
 
-There are 8 variables contained in this dataset: species, island, bill length(mm), bill depth(mm), flipper mass(mm), body mass(g), sex, and year.
+There are 8 variables contained in this dataset: species, island, bill length(mm), bill depth(mm), flipper mass(mm), body mass(g), sex, and year. 
+
+Species contains three different groups: Adelie, Chinstrap, and Gentoo. 
+Island also contains three different groups: Biscoe, Dream, and Torgersen. 
+Bill length ranges from `r min(penguins$bill_length_mm, na.rm = TRUE)`mm to `r max(penguins$bill_length_mm, na.rm = TRUE)`mm. 
+Bill depth ranges from `r min(penguins$bill_depth_mm, na.rm = TRUE)`mm to `r max(penguins$bill_depth_mm, na.rm = TRUE)`mm. 
+Flipper length ranges from `r min(penguins$flipper_length_mm, na.rm = TRUE)`mm to `r max(penguins$flipper_length_mm, na.rm = TRUE)` mm.
+Body mass ranges from `r min(penguins$body_mass_g, na.rm = TRUE)`g to `r max(penguins$body_mass_g, na.rm = TRUE)`g.
+Sex contains 2 groups: female and male.
+Year ranges from 2007 to 2009.
 
 The penguins dataset contains `r nrow(penguins)` rows and `r ncol(penguins)` columns.
 
